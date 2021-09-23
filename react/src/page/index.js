@@ -207,7 +207,7 @@ export default function Index(){
                             {produtos.map((item,i)=>
                                 
                                 <div className={i%2===0?"Bordar":"cor"}>
-                                    <div className='a mostruario1 sub'><img src={item.img_produto}></img></div>
+                                    <div className='a mostruario1 sub'><img src={item.img_produto} alt =""></img></div>
                                     <div className='a id1 sub'>{item.id_produto}</div>
                                     <div className='a produto1 sub' title={item.nm_produto}>{(item.nm_produto != null && item.nm_produto.length>=22)?`${item.nm_produto.substr(0,22)}...`:item.nm_produto}</div>
                                     <div className='a categoria1 sub'>{item.ds_categoria}</div>
