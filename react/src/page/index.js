@@ -38,7 +38,7 @@ export default function Index(){
 
     async function inserir(){
 
-        if(idAlterando==0){
+        if(idAlterando===0){
             let r = await api.inserir(produto,categoria,precoDe,precoPor,avaliacao,descricao,estoque,imagem);
             
             if(r.erro)
@@ -159,7 +159,7 @@ export default function Index(){
                     <div className='Cadastro'>
                         <div className='Novo'>
                             <div className='Linha'><img src=' /assets/images/Line.png' alt=''/></div>
-                            <div className=''>{idAlterando==0?"Novo Produto":`Alterando Produto : ${idAlterando}`}</div>
+                            <div className=''>{idAlterando===0?"Novo Produto":`Alterando Produto : ${idAlterando}`}</div>
                         </div>
                         <div className='Divisao'>
                             <div className="Inserir">
@@ -183,7 +183,7 @@ export default function Index(){
 
                             </div>
                             <div className='Botao'>
-                                <button onClick={inserir}>{idAlterando==0?"Cadastrar":"Alterar"} </button>
+                                <button onClick={inserir}>{idAlterando===0?"Cadastrar":"Alterar"} </button>
                             </div>
                         </div>
                     </div>
@@ -206,7 +206,7 @@ export default function Index(){
                             </div>
                             {produtos.map((item,i)=>
                                 
-                                <div className={i%2==0?"Bordar":"cor"}>
+                                <div className={i%2===0?"Bordar":"cor"}>
                                     <div className='a mostruario1 sub'><img src={item.img_produto}></img></div>
                                     <div className='a id1 sub'>{item.id_produto}</div>
                                     <div className='a produto1 sub' title={item.nm_produto}>{(item.nm_produto != null && item.nm_produto.length>=22)?`${item.nm_produto.substr(0,22)}...`:item.nm_produto}</div>
